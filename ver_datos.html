@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="style.css">
+	<script>
+	window.onload = init;
+
+	function init() {
+		//console.log("iniciando...");
+	for(var i =0; i < localStorage.length; i++){
+    var key = localStorage.key(i);
+    
+    if(key.substring(0,5) == "datos"){
+        
+        var value = localStorage.getItem(key);
+        console.log('Dato traido: ', JSON.parse(value));
+
+        console.log(key+">>"+value);
+        addItemToDOM(key,value,i);
+    }
+
+	}
+	            
+
+	}
+	/*
+	function addItemToDOM(key,valor) {
+
+	var actual = document.getElementById("datosdiv").value;
+    document.getElementById("datosdiv").value += valor;
+
+	
+	return false;
+
+	}
+	*/
+
+	function delete_item(keyitem, divid){
+		var result = confirm("Confirma eliminar?");
+		if (result==true) {
+    	//Logic to delete the item
+    	localStorage.removeItem(keyitem);
+		var itemcontenedor = document.getElementById("item"+divid);
+		itemcontenedor.innerHTML ="";
+		}
+		
+	}
+	
+	function addItemToDOM(key,value,i) {
+	var value= JSON.parse(value);
+	var datosdiv = document.getElementById("datosdiv");
+	var item = document.createElement("div");
+	item.id= "item"+i;
+	var span = document.createElement("span");
+	span.setAttribute("class", "item");
+	span.innerHTML = value['marca_vehiculo'] +" "+
+	value['modelo_vehiculo']+" "+
+	value['marca_neumatico']+" "+
+	value['modelo_neumatico']+" "+
+	value['estado_neumatico']+
+	"<a class=\"btnborrar\" onclick=\"delete_item('"+key+"','"+i+"')\">Borrar</a>";
+	item.appendChild(span);
+	datosdiv.appendChild(item);
+	return false;
+
+	}
+
+
+	</script>
+</head>
+<body>
+<header class="block">
+<div class="one_3">
+		<h1>RecolectorApp</h1>
+		<p>un ejemplo...</p>
+	</div>
+
+	<div class="two_3">
+	<nav>
+		<ul>
+			<li><a href="index.html">Cargar datos</a></li>
+			<li><a href="enviar_datos.html">Enviar datos</a></li>
+		</ul>
+	</nav>
+	</div>
+</header>
+<div class="block">
+	<ul name="datosdiv" id="datosdiv"></ul>
+</div>
+	
+		
+<footer class="block">
+	<div class="full">
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem dignissimos, expedita, rem aut enim, officia nam natus, illum eius ipsum quidem dicta. Animi expedita incidunt, laborum dicta nulla! Eligendi, fugit.</p>
+	</div>
+</footer>
+
+
+	
+</body>
+</html>

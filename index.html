@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Form</title>
+	<link rel="stylesheet" href="style.css">
+		<style type="text/css">
+		html,body{height:100%;}
+		#wrapper {min-height:100%; position:relative; }
+		
+		</style>
+	<script src="manager.js"></script>
+</head>
+<body>
+
+<header class="block">
+<div class="one_3">
+		<h1>RecolectorApp</h1>
+		<p>un ejemplo...</p>
+	</div>
+
+	<div class="two_3">
+	<nav>
+		<ul>
+			<li><a href="ver_datos.html">Ver cargados</a></li>
+			<li><a href="enviar_datos.html">Enviar datos</a></li>
+		</ul>
+	</nav>
+	</div>
+</header>
+
+
+<div id="wrapper" class="block">
+<div id="mensajes">
+	<div id="mensaje"></div>
+</div>
+	<div class="full">
+		
+		<div id="simpleform">
+			<div class="form-item">
+			<label for="Campo uno">Marca vehiculo</label>
+			<select name="marca_vehiculo" id="marca_vehiculo">
+				<option value="Ford">Ford</option>
+				<option value="Fiat">Fiat</option>
+				<option value="Volvo">Volvo</option>
+				<option value="Peugeot">Peugeot</option>
+				<option value="Toyota">Toyota</option>
+			</select>
+			</div>
+			<div class="form-item">
+			<label for="Campo uno">Modelo vehiculo</label>
+			<input type="text" name="modelo_vehiculo" id="modelo_vehiculo">
+			</div>
+			<div class="form-item">
+			<label for="Campo uno">Marca neumatico</label>
+			<input type="text" name="marca_neumatico" id="marca_neumatico">
+			</div>
+			<div class="form-item">
+			<label for="Campo uno">Modelo neumatico</label>
+			<input type="text" name="modelo_neumatico" id="modelo_neumatico">
+			</div>
+			<div class="form-item">
+			<label for="Campo uno">Estado neumatico</label>
+			<input type="text" name="estado_neumatico" id="estado_neumatico">
+			</div>
+			<div class="form-item">
+			<button id="procesar">Guardar</button>
+			</div>
+		</div>
+	</div>
+		
+
+	
+</div>
+
+<footer class="block">
+	<div class="full">
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem dignissimos, expedita, rem aut enim, officia nam natus, illum eius ipsum quidem dicta. Animi expedita incidunt, laborum dicta nulla! Eligendi, fugit.</p>
+	</div>
+</footer>
+
+</body>
+</html>
